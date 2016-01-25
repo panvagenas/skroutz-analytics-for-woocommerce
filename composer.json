@@ -11,8 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
-        "panvagenas/wp-menu-pages": "*"
+        "php": ">=5.3"
     },
     "require-dev": {},
     "config": {

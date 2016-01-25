@@ -36,7 +36,7 @@ Contributors: pan.vagenas
 Author: Panagiotis Vagenas <pan.vagenas@gmail.com>
 Author URI: http://gr.linkedin.com/in/panvagenas
 
-Text Domain: woocommerce-skrouz-analytics
+Text Domain: woocommerce-skroutz-analytics
 Domain Path: /lang
 
 Plugin Name: Skroutz Analytics for WooCommerce
@@ -54,4 +54,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once "vendor/autoload.php";
 
-(new \Pan\SkroutzAnalytics\Initializer(__FILE__))->run();
+new \Pan\SkroutzAnalytics\Initializer(__FILE__);

@@ -2,35 +2,39 @@
 
 namespace Pan\SkroutzAnalytics;
 
-use Pan\MenuPages\Fields\Text;
-use Pan\MenuPages\PageElements\Components\CmpTabForm;
-use Pan\MenuPages\PageElements\Containers\CnrTabbedSettings;
-use Pan\MenuPages\Pages\SubPage;
-use Pan\MenuPages\WpMenuPages;
-use Respect\Validation\Validator;
-
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
 class Initializer {
+    const TEXT_DOMAIN = 'woocommerce-skroutz-analytics';
     protected $pluginFile;
-    public function __construct($pluginFile) {
+
+    public function __construct( $pluginFile ) {
         $this->pluginFile = $pluginFile;
+
+        load_plugin_textdomain(self::TEXT_DOMAIN);
+
+        add_action(
+            'woocommerce_thankyou',
+            array( $this, 'actionWcThankYou' )
+        );
+        add_action( 'plugins_loaded', array( $this, 'run' ) );
+
     }
 
-    public function run(){
-        add_action('woocommerce_thankyou', [ new SkroutzAnalytics($this->pluginFile), 'actionWcThankYou' ]);
-        $this->optionsSetUp();
+    public function run() {
+        add_filter( 'woocommerce_integrations', array( $this, 'addIntegration' ) );
     }
 
-    protected function optionsSetUp(){
-        $wpMenuPages = new WpMenuPages($this->pluginFile, Options::getInstance());
-        $menuPage = new SubPage($wpMenuPages,SubPage::PARENT_SETTINGS, 'Skroutz Analytics');
+    public function addIntegration( $integrations ) {
+        $integrations[] = 'Pan\SkroutzAnalytics\SkroutzAnalytics';
+        return $integrations;
+    }
 
-        $tabs = new CnrTabbedSettings($menuPage, SubPage::POSITION_MAIN);
-        $optionsTab = new CmpTabForm($tabs, 'Account ID', true);
-        $accountIdFld = new Text($optionsTab, 'account_id');
-        $accountIdFld->setLabel('Account ID')->attachValidator(Validator::stringType()->notEmpty());
+    public function actionWcThankYou( $orderId ) {
+        $skz = new SkroutzAnalytics($this->pluginFile);
+
+        $skz->actionWcThankYou($orderId);
     }
 }
