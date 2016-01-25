@@ -1,0 +1,38 @@
+{
+    "name": "panvagenas/woocommerce-skroutz-analytics",
+    "description": "...",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Panagiotis Vagenas",
+            "email": "pan.vagenas@gmail.com",
+            "homepage": "https://gr.linkedin.com/in/panvagenas",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "panvagenas/wp-menu-pages": "*"
+    },
+    "require-dev": {},
+    "config": {
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "files": [],
+        "psr-4": {
+            "Pan\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
+    "archive": {
+        "exclude": [
+            "docs/*",
+            "tests/*"
+        ]
+    }
+}
