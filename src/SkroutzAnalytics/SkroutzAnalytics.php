@@ -48,7 +48,6 @@ class SkroutzAnalytics extends \WC_Integration {
                 'title'       => __( 'Account ID', Initializer::TEXT_DOMAIN ),
                 'type'        => 'text',
                 'description' => __( sprintf( 'You can get this from %s', $skzAccountLink ), Initializer::TEXT_DOMAIN ),
-                'desc_tip'    => __( 'This will add a title to your slider', Initializer::TEXT_DOMAIN ),
                 'default'     => '',
             ),
         );
