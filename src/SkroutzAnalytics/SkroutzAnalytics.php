@@ -129,9 +129,14 @@ class SkroutzAnalytics extends \WC_Integration {
     }
 
     protected function formOrderArray( \WC_Order $order ) {
+        $totalFees = 0;
+        foreach ( $order->get_fees() as $fee ) {
+            $totalFees += $fee['line_total'];
+        }
+
         $this->order = array(
             'order_id' => $order->id,
-            'revenue'  => $order->order_total,
+            'revenue'  => round( $order->order_total - $totalFees, wc_get_price_decimals() ),
             'shipping' => $order->get_total_shipping(),
             'tax'      => $order->get_total_tax(),
         );
