@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Initializer {
-    const TEXT_DOMAIN = 'woocommerce-skroutz-analytics';
+    const TEXT_DOMAIN = 'skroutz-analytics-for-woocommerce';
     protected $pluginFile;
 
     public function __construct( $pluginFile ) {

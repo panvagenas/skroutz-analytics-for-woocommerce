@@ -2,7 +2,7 @@
 
 ## Description
 
-A WordPress plugin that implements skroutz.gr analytics for WooCommerce
+A WordPress plugin that integrates skroutz.gr analytics to WooCommerce
 
 ## Requirements:
 
@@ -13,8 +13,7 @@ A WordPress plugin that implements skroutz.gr analytics for WooCommerce
 
 ## Installation
 
-Please consult WordPress documentation about installing  
-plugins [installation guide](https://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
+Please consult WordPress plugins [installation guide](https://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
 
 ## Setup 
 

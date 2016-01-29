@@ -36,15 +36,15 @@ Contributors: pan.vagenas
 Author: Panagiotis Vagenas <pan.vagenas@gmail.com>
 Author URI: http://gr.linkedin.com/in/panvagenas
 
-Text Domain: woocommerce-skroutz-analytics
+Text Domain: skroutz-analytics-for-woocommerce
 Domain Path: /lang
 
 Plugin Name: Skroutz Analytics for WooCommerce
-Plugin URI: https://github.com/panvagenas/woocommerce-skroutz-analytics
+Plugin URI: https://github.com/panvagenas/skroutz-analytics-for-woocommerce
 
 Description:
 
-Tags: skroutz, skroutz.gr, analytics
+Tags: skroutz, skroutz.gr, analytics, woocommerce
 
 -- end section for WordPress®. -------------------------------------------------------------------------------------- */
 

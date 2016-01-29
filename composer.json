@@ -1,7 +1,8 @@
 {
-    "name": "panvagenas/woocommerce-skroutz-analytics",
+    "name": "panvagenas/skroutz-analytics-for-woocommerce",
     "description": "...",
     "license": "GPL-3.0+",
+    "keywords": ["skroutz", "skroutz.gr", "analytics", "woocommerce"],
     "authors": [
         {
             "name": "Panagiotis Vagenas",
